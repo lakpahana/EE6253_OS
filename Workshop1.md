@@ -62,8 +62,45 @@ current directory to Example1.
     ls -a
     ````
 17. List all files in Home directory in long list format.
-18. Change directory to root directory and list all files. Visualize the
+    ````
+    ls -l
+    
+    drwxr-xr-x 2 user user 4096 Sep  6 12:00 Folder1
+
+    1st character - d for directory, - for file	
+
+    next 3 characters - owner
+    next 3 characters - group
+    next 3 characters - others
+ 
+    r - read
+    w - write
+    x - execute
+
+    order is rwx
+  
+
+    ````
+18. Change directory to root directory and list all files. Visualize the    
 root directory using GUI. Terminate the GUI using terminal.
+    ````
+    cd /
+    ls
+    nautilus
+    ````
+    Terminate the GUI using terminal.
+    ````
+    Ctrl+C
+    or
+    killall nautilus
+    ````
 19. Change directory back to Desktop using single command and delete
 directory Folder1.
+    ````
+    cd ~/Desktop
+    rmdir Folder1
+    ````
 20. Clear the screen of the terminal.
+    ````
+    clear
+    ````
