@@ -43,9 +43,24 @@ Terminal?
     ````
 13.Create the new folder in the Desktop with name Example1 and change the
 current directory to Example1.
+    
+    ````
+    mkdir Example1
+    ````
+
 14. Go back to the previous directory and rename Example1 as Folder1.
+    ````
+    cd      
+    mv Example1 Folder1
+    ````
 15. List all files in Home directory.
+    ````
+    ls
+    ````
 16. List all files in Home directory with hidden files.
+    ````
+    ls -a
+    ````
 17. List all files in Home directory in long list format.
 18. Change directory to root directory and list all files. Visualize the
 root directory using GUI. Terminate the GUI using terminal.
