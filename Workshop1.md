@@ -22,13 +22,25 @@
     ````
 9. What is the syntax of displaying hostname and username in Linux
 Terminal?
-```echo $HOSTNAME```
-```echo $USER```
-
+    ````
+    username@hostname:~$
+    ````
 
 10. What is the meaning of ~ symbol?
+    ````
+    ~ symbol represents the home directory of the current user.
+    ````
+
 11. Go to the Desktop directory in Home.
+    ````
+    cd Desktop
+    or
+    cd ~/Desktop
+    ````
 12. Display the current working directory.
+    ````
+    pwd
+    ````
 13.Create the new folder in the Desktop with name Example1 and change the
 current directory to Example1.
 14. Go back to the previous directory and rename Example1 as Folder1.
