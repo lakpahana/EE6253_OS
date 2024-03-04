@@ -8,8 +8,11 @@
 4. Download and install gcc compiler.
     ```sudo apt-get install gcc```
 5. Download and install build essentials.
+    ```sudo apt-get install build-essential```	
 6. Download and install gedit.
+    ```sudo apt-get intall gedit```
 7. Update ubuntu.
+    ```sudo apt-get update```
 8. Explain hostname and username in Linux.
 9. What is the syntax of displaying hostname and username in Linux
 Terminal?
