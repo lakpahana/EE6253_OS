@@ -3,6 +3,7 @@
 
 1. Log in to the ubuntu.
 2. Open the terminal.
+    Shortcut Ctrl+Alt+T
 3. Upgrade ubuntu.
     ```sudo apt-get upgrade```
 4. Download and install gcc compiler.
@@ -14,8 +15,17 @@
 7. Update ubuntu.
     ```sudo apt-get update```
 8. Explain hostname and username in Linux.
+    ````
+    Hostname is the name of the computer and username is the name of the user who is currently logged in.
+    eg. 
+    username@hostname:~$
+    ````
 9. What is the syntax of displaying hostname and username in Linux
 Terminal?
+```echo $HOSTNAME```
+```echo $USER```
+
+
 10. What is the meaning of ~ symbol?
 11. Go to the Desktop directory in Home.
 12. Display the current working directory.
