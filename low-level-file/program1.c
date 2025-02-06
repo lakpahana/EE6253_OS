@@ -4,10 +4,6 @@
 #include <errno.h>
 #include <sys/stat.h>
 
-// 4. Create and open a file doc3.txt with read,write,execute privileges and close it.
-// Then, change the mode to read only privileges without opening it. Open doc3.txt as
-// read only and Write a program with error handling to write a sentence to it?
-
 int main()
 {
     // 1. Create a text file named as doc1.txt and write name and age the user input using
@@ -143,6 +139,10 @@ int main()
 
     lseek(fd6, 40, SEEK_SET); // Move the file pointer to the 40th byte
 
+    // SEEK_SET: The offset is set to the beginning of the file.
+    // SEEK_CUR: The offset is set to the current position of the file pointer.
+    // SEEK_END: The offset is set to the end of the file.
+
     char buffer2[11]; // 40th to 50th byte is 11 bytes
 
     bytes_read = read(fd6, buffer2, sizeof(buffer2));
@@ -166,6 +166,43 @@ int main()
     }
 
     close(fd5);
+
+    // 4. Create and open a file doc3.txt with read,write,execute privileges and close it.
+    // Then, change the mode to read only privileges without opening it. Open doc3.txt as
+    // read only and Write a program with error handling to write a sentence to it?
+
+    int fd7 = open("doc3.txt", O_WRONLY | O_CREAT | O_TRUNC, S_IRWXU | S_IRWXG | S_IRWXO);
+
+    if (fd7 == -1)
+    {
+        perror("Error in opening file");
+        return -1;
+    }
+
+    close(fd7);
+
+    chmod("doc3.txt", S_IRUSR | S_IRGRP | S_IROTH); // S_IRUSR: Read permission for the owner, S_IRGRP: Read permission for the group, S_IROTH: Read permission for other
+
+    int fd8 = open("doc3.txt", O_RDONLY, S_IRUSR | S_IRGRP | S_IROTH);
+
+    if (fd8 == -1)
+    {
+        perror("Error in opening file"); // permisson denied if i add S_IWSUSR
+        return -1;
+    }
+
+    char sentence[] = "This is a sentence.";
+
+    bytes_written = write(fd8, sentence, strlen(sentence));
+
+    if (bytes_written == -1)
+    {
+        perror("Error in writing to file");
+        close(fd8);
+        return -1;
+    }
+
+    close(fd8);
 
     return 0;
 }
