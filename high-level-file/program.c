@@ -7,6 +7,13 @@
 // handling.
 // 2. Copy doc1.txt into another file doc2.txt
 // with possible error handling.
+// fopen
+// r - read
+// w - write
+// a - append
+// r+ - read and write
+// w+ - write and read , creae , truncate
+// a+ - append and read, create, append
 
 int main()
 {
